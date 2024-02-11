@@ -1,8 +1,60 @@
-<h1>Introduction to Front-end development</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<p>A front-end developer architects and develops websites and applications using web technologies (languages):</p>
-<ul>
-<li style="color: red;">HTML</li>
-<li style="color: green;">CSS</li>
-<li style="color: blue;">JavaScript</li>
-</ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Animacija Kruga</title>
+    <style>
+      body {
+    background-color: #050210;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.ring {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(90deg, #fb5dad, #55fb9f, #b97aff);
+    border-radius: 50%;
+    position: relative;
+    filter: sepia(50%) drop-shadow(0 0 10px #fb5dad) drop-shadow(0 0 20px #55fb9f) drop-shadow(0 0 30px #b97aff);
+    animation: rotateAnimation 3s linear infinite;
+}
+
+.ring::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-color: #050210;
+    border-radius: 50%;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="ring"></div>
+</body>
+
+
+
+
+</html>
