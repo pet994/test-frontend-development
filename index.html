@@ -3,58 +3,61 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Animacija Kruga</title>
+    <title>Napredni CSS selektori</title>
     <style>
-      body {
-    background-color: #050210;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+        a[href*="google.com"] {
+            color: green;
+        }
+        a[target="_blank"] {
+            color: red;
+        }
+        #second-div p:nth-child(even) {
+            color: red;
+        }
 
-.ring {
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(90deg, #fb5dad, #55fb9f, #b97aff);
-    border-radius: 50%;
-    position: relative;
-    filter: sepia(50%) drop-shadow(0 0 10px #fb5dad) drop-shadow(0 0 20px #55fb9f) drop-shadow(0 0 30px #b97aff);
-    animation: rotateAnimation 3s linear infinite;
-}
+        #second-div p:nth-child(odd) {
+            color: blue;
+        }
 
-.ring::before {
-    content: '';
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    background-color: #050210;
-    border-radius: 50%;
-}
+        #first-div p:nth-child(2)::after,
+        #first-div p:nth-child(3)::after {
+            content: " NEW";
+            color: yellow;
+        }
+        #second-div p:nth-child(2)::after,
+        #second-div p:nth-child(3)::after {
+            content: none;
+        }
+        body p:nth-child(8):hover {
+            font-style: italic;
+        }
 
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+
 
     </style>
 </head>
 
 <body>
-    
-    <div class="ring"></div>
+    <h1>Main Heading</h1>
+    <p>Paragraph 1</p>
+    <a href="https://www.google.com/">Google</a>
+    <a href="https://www.google.com/doodles">Google Doodles</a>
+    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
+    <div id="first-div">
+        <h2>Subheading</h2>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>     
+        <div id="second-div">
+            <h3>Sub subheading</h3>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+            <p>Paragraph 6</p>
+            <p>Paragraph 7</p>
+            <p>Paragraph 8</p>
+        </div>
+    </div>
+    <p>Paragraph 9</p>
+    <p>Paragraph 10</p>
 </body>
-
-
-
 
 </html>
